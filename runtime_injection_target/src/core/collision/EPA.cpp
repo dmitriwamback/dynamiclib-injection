@@ -61,7 +61,7 @@ void EPA::AddUnique(std::vector<std::pair<size_t, size_t> > &edges, const std::v
 
 Collision EPA::ApplyEPA(Simplex &simplex, std::vector<Vertex> vA, std::vector<Vertex> vB) {
 
-    Collision collisionInfo;
+    Collision collisionInfo{};
     collisionInfo.normal = glm::vec3(0.0f);
     collisionInfo.depth = 0.0f;
     collisionInfo.collided = false;
@@ -79,4 +79,6 @@ Collision EPA::ApplyEPA(Simplex &simplex, std::vector<Vertex> vA, std::vector<Ve
     float min_dst = 10000000000.0f;
 
     //glm::vec3 support = GJK::Support()
+
+    return collisionInfo;
 }

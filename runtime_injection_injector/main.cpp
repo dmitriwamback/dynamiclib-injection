@@ -36,10 +36,7 @@ static std::vector<uint32_t> buildPayloadShellcode(uint64_t dlopenAddr,
 }
 
 // STAGE 1: raw Mach thread — bootstraps a real pthread to run stage 2.
-static std::vector<uint32_t> buildBootstrapShellcode(uint64_t outPtrAddr,
-                                                      uint64_t payloadAddr,
-                                                      uint64_t pathAddr,
-                                                      uint64_t pthreadCreateAddr) {
+static std::vector<uint32_t> buildBootstrapShellcode(uint64_t outPtrAddr, uint64_t payloadAddr, uint64_t pathAddr, uint64_t pthreadCreateAddr) {
     std::vector<uint32_t> code;
 
     emitMov64(code, 0, outPtrAddr);        // x0 = &pthread_t out
