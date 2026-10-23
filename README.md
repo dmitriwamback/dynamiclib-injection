@@ -119,5 +119,5 @@ There is a special <code>compile_to_dylib.sh</code> in the <code>runtime_injecti
 ```
 sh runtime_injection_injector/compile_to_dylib.sh
 ```
-After running, the payload with be compiled to a dynamic library (.dylib) that the injector will load and use against the target application.
+After running, the payload will be compiled to a dynamic library (.dylib) that the injector will load and use against the target application.
 Additionally, make sure to change the dylib load path inside <code>runtime_injection_injector/main.cpp</code> (line 82) so it finds the compiled dylib. (Absolute paths recommended)
